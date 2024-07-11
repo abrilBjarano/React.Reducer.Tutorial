@@ -1,0 +1,37 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Basic Reducer",
+  "steps": [
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Se crea el estado inicial",
+      "line": 1
+    },
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Se crea el reducer. El Reducer tiene el mapa de todas las acciones.\r\nUsualmente recibe estos dos args, el state y la action.\r\n\r\nRecordemos que la action es un objeto con dos propiedades:\r\n\r\n* type: para el switch. Es un string.\r\n* payload: la nueva información.\r\n\r\n\r\nCuando el Reducer desconozca el action.type, simplemente va a retornar el estado anterior.\r\n\r\nTambién recordemos que siempre tiene que devolver un NUEVO ESTADO, no uno modificado.",
+      "line": 8
+    },
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Creamos el objeto de la action.\r\n\r\nVa a ser para agregar en el estado initial, así que\r\n\r\ntype: 'Add todo',\r\npayload: Aquí va la información nueva que queremos agregar al State.\r\n\r\nPara esto crearemos un objeto nuevo llamado newTodo.",
+      "line": 25
+    },
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Lo creamos aquí",
+      "line": 18
+    },
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Usamos ya el reducer con la action que creamos.",
+      "line": 31
+    },
+    {
+      "file": "src/intro-reducer.js",
+      "description": "Aquí ya podemos ver que sí se agregó correctamente.",
+      "line": 32
+    }
+  ],
+  "ref": "35c9fe3714eb4e404a634117336af13863b86fae"
+}
