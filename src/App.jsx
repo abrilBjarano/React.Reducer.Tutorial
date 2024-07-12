@@ -1,6 +1,10 @@
+import { IntroUseReducer } from "./IntroUseReducer";
+
 export const App = () => {
-   return (
-     <div>App</div>
-   )
+  return (
+    <>
+      <IntroUseReducer />
+    </>
+  )
 }
    
