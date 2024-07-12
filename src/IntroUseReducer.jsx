@@ -1,13 +1,7 @@
 import { useReducer } from "react";
 
-const initialState = [{
-   id: 1,
-   todo: 'Doblar ropa',
-   done: false
-}];
-
-const todoReducer = ( state = initialState, action ) => {
-   switch( action.type ) {
+const todoReducer = ( state = initialState, action = {} ) => {
+   switch( action.type ){
       case 'Add todo':
          return [ ...state, action.payload ];
 
@@ -16,14 +10,19 @@ const todoReducer = ( state = initialState, action ) => {
    }
 };
 
+const initialState = [{
+   id: 1,
+   todo: 'Tomar agua',
+   done: false
+}]
 
-export const IntroUszeReducer = () => {
+export const IntroUseReducer = () => {
 
    const [ todos, dispatch ] = useReducer( todoReducer, initialState );
 
    const newTodo = {
       id: 2,
-      todo: 'Salir a caminar',
+      todo: 'Ir a caminar',
       done: false
    }
 
@@ -34,20 +33,20 @@ export const IntroUszeReducer = () => {
       })
    };
 
-
    return (
       <>
-         <h1>Todo List</h1>
+         <h1>IntroUseReducer</h1>
+
          <ul>
-            { todos.map(todo => (
-               <li key={todo.id}>{todo.todo}</li>
+            { todos.map(( todo => 
+                  <li key={ todo.todo }>{ todo.todo }</li>
             ))}
          </ul>
 
-         <button
+         <button 
             onClick={ addTodo }
             className="btn btn-primary">
-            Agregar todo
+            Agregar
          </button>
       </>
    )

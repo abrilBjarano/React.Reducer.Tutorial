@@ -1,35 +1,38 @@
 const initialState = [{
    id: 1,
-   todo: 'Hacer notas de este tutorial en el ipad',
+   todo: 'Limpiar cuarto',
    done: false
 }]
 
-
 const todoReducer = ( state = initialState, action = {} ) => {
-
-   if( action.type === 'Add todo' ){
-      return [...state, action.payload ]
+   switch( action.type ){
+      case 'Add todo':
+         return [ ...state, action.payload ];
+      
+      default:
+         return state;
    }
-
-   return state; 
 };
 
+// const todos = todoReducer();
+// console.log( todos );
 
 const newTodo = {
    id: 2,
-   todo: 'Hacer ejercicio',
+   todo: 'Ir a la facu',
    done: false
 }
-
 
 const addTodoAction = {
    type: 'Add todo',
    payload: newTodo
 }
 
-
 const todos = todoReducer( undefined, addTodoAction );
-console.log(todos);
+console.log( todos );
+
+
+
 
 
 
