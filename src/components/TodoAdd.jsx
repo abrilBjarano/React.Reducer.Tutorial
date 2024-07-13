@@ -1,27 +1,8 @@
-import { useState } from "react";
+import { useForm } from "../hooks/useForm";
 
 export const TodoAdd = ({ dispatch }) => {
 
-   const [ inputValue, setInputValue ] = useState('');
-
-   const onChangeInput = ({ target }) => {
-      setInputValue( target.value );
-   };
-
-   const onSubmit = ( event ) => {
-      event.preventDefault();
-
-      const newValue = {
-         id: new Date().getTime(),
-         description: inputValue,
-         done: false,
-      }
-
-      dispatch({
-         type: 'Add todo',
-         payload: newValue
-      })
-   };
+   const { onSubmit, onChangeInput, inputValue } = useForm(dispatch);
 
    return (
       <div className="row mb-4">
