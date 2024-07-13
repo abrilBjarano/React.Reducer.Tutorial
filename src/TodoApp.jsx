@@ -23,7 +23,7 @@ export const TodoApp = () => {
          <h1>TodoApp</h1>
          <hr />
 
-         <div className="row mb-5 mt-2">
+         <div className="row mb-4">
 
             <form className="col-10">
                <input
@@ -32,13 +32,16 @@ export const TodoApp = () => {
                   placeholder="What needs to be done?"/>
             </form>
 
-            <button 
-               type="submit"
-               className="col-2 btn btn-primary">
-               Add Todo
-            </button>
+            <div className="col-2 d-grid">
+               <button
+                  type="submit"
+                  className="btn btn-primary">
+                     Add
+               </button>
+            </div>
 
          </div>
+         
 
          <ul className="list-group">
             { todos.map( todo => (
@@ -50,7 +53,6 @@ export const TodoApp = () => {
                </li>
             ))}
          </ul>
-
       </>
    )
 }
