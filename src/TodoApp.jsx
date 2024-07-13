@@ -26,7 +26,7 @@ export const TodoApp = () => {
          <h1>TodoApp</h1>
          <hr />
 
-         <TodoAdd/>
+         <TodoAdd dispatch={ dispatch }/>
          
          <TodoList todos={ todos }/>
          
