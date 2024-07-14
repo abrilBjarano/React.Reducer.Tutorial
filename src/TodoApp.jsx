@@ -1,25 +1,13 @@
-import { useReducer } from "react";
-import { todoReducer } from "./todoReducer";
+import { useContext } from "react";
 
 import { TodoAdd } from "./components/TodoAdd";
 import { TodoList } from "./components/TodoList";
-
-const initialState = [
-   {
-      id: new Date().getTime() * 3,
-      description: 'Salir a caminar',
-      done: false,
-   },
-   {
-      id: new Date().getTime() * 2,
-      description: 'Ir a la facu',
-      done: false,
-   }
-]
+import { TodoContext } from "./context/TodoContext";
+import { TodoProvider } from "./context/TodoProvider";
 
 export const TodoApp = () => {
 
-   const [ todos, dispatch ] = useReducer( todoReducer, initialState );
+   const { todos, dispatch } = useContext( TodoContext );
 
    return (
       <>
