@@ -4,7 +4,7 @@ import { TodoContext } from "../context/TodoContext";
 export const useForm = () => {
 
    const [ inputValue, setInputValue ] = useState('');
-   const { dispatch } = useContext( TodoContext ); 
+   const { addTodo } = useContext( TodoContext ); 
 
    const onChangeInput = ({ target }) => {
       setInputValue( target.value );
@@ -19,10 +19,7 @@ export const useForm = () => {
          done: false,
       }
 
-      dispatch({
-         type: 'Add todo',
-         payload: newValue
-      })
+      addTodo( newValue );
    };
 
    return {

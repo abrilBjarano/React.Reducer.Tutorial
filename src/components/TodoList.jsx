@@ -5,6 +5,12 @@ export const TodoList = () => {
 
    const { todos } = useContext( TodoContext );
 
+
+   const onTodoClick = ( todo ) => {
+      console.log( todo );
+   };
+
+
    return (
       <ul className="list-group">
          { todos.map( todo => (
@@ -14,7 +20,11 @@ export const TodoList = () => {
 
                {todo.description}
 
-               <button className="btn btn-danger">X</button>
+               <button
+                  onClick={ () => onTodoClick( todo ) } 
+                  className="btn btn-danger">
+                  X
+               </button>
             </li>
          ))}
       </ul>

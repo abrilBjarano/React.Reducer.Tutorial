@@ -19,11 +19,19 @@ export const TodoProvider = ({ children }) => {
 
    const [ todos, dispatch ] = useReducer( todoReducer, initialState );
 
+   const addTodo = ( newValue ) => {
+      dispatch({
+         type: 'Add todo',
+         payload: newValue
+      })
+   };
+
    return (
       <TodoContext.Provider 
          value={{ 
             todos, 
-            dispatch, 
+            dispatch,
+            addTodo, 
          }}
       >
          { children }
