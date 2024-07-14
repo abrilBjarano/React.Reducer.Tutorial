@@ -1,8 +1,8 @@
 import { useForm } from "../hooks/useForm";
 
-export const TodoAdd = ({ dispatch }) => {
+export const TodoAdd = () => {
 
-   const { onSubmit, onChangeInput, inputValue } = useForm(dispatch);
+   const { onSubmit, onChangeInput, inputValue } = useForm();
 
    return (
       <div className="row mb-4">

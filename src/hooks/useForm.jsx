@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TodoContext } from "../context/TodoContext";
 
-export const useForm = ( dispatch ) => {
+export const useForm = () => {
 
    const [ inputValue, setInputValue ] = useState('');
+   const { dispatch } = useContext( TodoContext ); 
 
    const onChangeInput = ({ target }) => {
       setInputValue( target.value );

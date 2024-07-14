@@ -1,4 +1,10 @@
-export const TodoList = ({ todos }) => {
+import { useContext } from "react"
+import { TodoContext } from "../context/TodoContext"
+
+export const TodoList = () => {
+
+   const { todos } = useContext( TodoContext );
+
    return (
       <ul className="list-group">
          { todos.map( todo => (
