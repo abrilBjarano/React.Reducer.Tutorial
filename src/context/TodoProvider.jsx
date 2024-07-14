@@ -1,6 +1,7 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { todoReducer } from "../todoReducer";
 import { TodoContext } from "./TodoContext";
+
 
 const initialState = [
    {
@@ -15,9 +16,20 @@ const initialState = [
    }
 ]
 
+
+const init = () => {
+   return JSON.parse( localStorage.getItem('todos')) || initialState;
+};
+
 export const TodoProvider = ({ children }) => {
 
-   const [ todos, dispatch ] = useReducer( todoReducer, initialState );
+   const [ todos, dispatch ] = useReducer( todoReducer, initialState, init );
+
+
+   useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify( todos ));
+   }, [ todos ]);
+
 
    const addTodo = ( newValue ) => {
       dispatch({
@@ -32,6 +44,7 @@ export const TodoProvider = ({ children }) => {
          payload: id
       })
    };
+
 
    return (
       <TodoContext.Provider 
