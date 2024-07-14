@@ -3,11 +3,11 @@ import { TodoContext } from "../context/TodoContext"
 
 export const TodoList = () => {
 
-   const { todos } = useContext( TodoContext );
+   const { todos, deleteTodo } = useContext( TodoContext );
 
 
    const onTodoClick = ( todo ) => {
-      console.log( todo );
+      deleteTodo( todo.id );
    };
 
 
