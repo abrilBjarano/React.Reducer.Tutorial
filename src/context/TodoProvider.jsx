@@ -45,6 +45,13 @@ export const TodoProvider = ({ children }) => {
       })
    };
 
+   const toggleTodo = ( id ) => {
+      dispatch({
+         type: 'Toggle todo',
+         payload: id
+      })
+   };
+
 
    return (
       <TodoContext.Provider 
@@ -52,7 +59,8 @@ export const TodoProvider = ({ children }) => {
             todos, 
             dispatch,
             addTodo,
-            deleteTodo 
+            deleteTodo,
+            toggleTodo,
          }}
       >
          { children }
