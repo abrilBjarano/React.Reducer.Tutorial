@@ -20,6 +20,8 @@ export const useForm = () => {
       }
 
       addTodo( newValue );
+
+      setInputValue('');
    };
 
    return {
