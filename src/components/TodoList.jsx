@@ -6,7 +6,7 @@ export const TodoList = () => {
    const { todos, deleteTodo } = useContext( TodoContext );
 
 
-   const onTodoClick = ( todo ) => {
+   const onButtonClick = ( todo ) => {
       deleteTodo( todo.id );
    };
 
@@ -18,10 +18,10 @@ export const TodoList = () => {
                key={ todo.id }
                className="list-group-item d-flex justify-content-between align-items-center">
 
-               {todo.description}
+                  { todo.description }
 
                <button
-                  onClick={ () => onTodoClick( todo ) } 
+                  onClick={ () => onButtonClick( todo ) } 
                   className="btn btn-danger">
                   X
                </button>
