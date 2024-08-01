@@ -1,0 +1,37 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Basic useReducer",
+  "steps": [
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Primero creamos el reducer.",
+      "line": 3
+    },
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Luego el initialState, que usualmente pongo dentro del ContextProvider, al igual que lo demás.",
+      "line": 13
+    },
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Importo el useReducer con el reducer y el initialState",
+      "line": 21
+    },
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Tenemos el nuevo elemento para agregar al initialState",
+      "line": 23
+    },
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Creamos la acción con el dispatch",
+      "line": 29
+    },
+    {
+      "file": "src/ejemplos/IntroUseReducer.jsx",
+      "description": "Consumimos la action y ya.",
+      "line": 47
+    }
+  ],
+  "ref": "09fa81373b5da3b482ed55d022e93436331c5623"
+}
